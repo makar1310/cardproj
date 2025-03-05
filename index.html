@@ -27,6 +27,8 @@
         // Отправка данных в репозиторий (с использованием GitHub API)
         async function sendDataToRepo(id, value) {
             try {
+                        // Логируем данные перед отправкой
+                console.log("Отправляемые данные:", { [id]: value });
                 const response = await fetch('https://api.github.com/repos/makar1310/cardproj/contents/data.json', {
                     method: 'PUT',
                     headers: {
