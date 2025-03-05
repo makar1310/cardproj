@@ -27,7 +27,7 @@
         // Отправка данных в репозиторий (с использованием GitHub API)
         async function sendDataToRepo(id, value) {
             try {
-                const response = await fetch('https://api.github.com/repos/makar1310/cardproj/data.json', {
+                const response = await fetch('https://api.github.com/repos/makar1310/cardproj/contents/data.json', {
                     method: 'PUT',
                     headers: {
                         'Authorization': 'token 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', // Замените на ваш GitHub токен
@@ -55,7 +55,7 @@
 
         // Функция для получения SHA текущего содержимого файла (нужно для обновлений через API)
         async function getFileSHA() {
-            const response = await fetch('https://api.github.com/repos/makar1310/cardproj/data.json');
+            const response = await fetch('https://api.github.com/repos/makar1310/contents/cardproj/data.json');
             const data = await response.json();
             return data.sha;
         }
